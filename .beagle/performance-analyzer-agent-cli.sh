@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Make sure the OPENSEARCH_HOME environment variable is set
+if [ -z "$OPENSEARCH_HOME" ]; then
+    echo "OPENSEARCH_HOME variable needs to be set or passed in as a parameter."
+    exit 1
+fi
+
+# Make sure the OPENSEARCH_PATH_CONF environment variable is set
+if [ -z "$OPENSEARCH_PATH_CONF" ]; then
+    echo "OPENSEARCH_PATH_CONF variable needs to be set or passed in as a parameter."
+    echo "Note: It should be set to $OPENSEARCH_HOME/config (for docker or tar) or /etc/opensearch (for rpm or deb)"
+    exit 1
+fi
+
+PA_AGENT_JAVA_OPTS="-Dlog4j.configurationFile=$OPENSEARCH_PATH_CONF/opensearch-performance-analyzer/log4j2.xml \
+              -Xms64M -Xmx64M -XX:+UseSerialGC -XX:CICompilerCount=1 -XX:-TieredCompilation \
+              -XX:MaxRAM=400m"
+
+OPENSEARCH_MAIN_CLASS="org.opensearch.performanceanalyzer.PerformanceAnalyzerApp" \
+OPENSEARCH_ADDITIONAL_CLASSPATH_DIRECTORIES=performance-analyzer-rca/lib \
+OPENSEARCH_JAVA_OPTS=$PA_AGENT_JAVA_OPTS \
+ exec $OPENSEARCH_HOME/bin/opensearch-cli \
+   "$@"

@@ -1,0 +1,10 @@
+ARG BASE
+
+FROM $BASE
+
+ARG AUTHOR
+ARG VERSION
+
+LABEL maintainer=$AUTHOR version=$VERSION
+
+COPY --chown=1000:1000 .beagle/performance-analyzer-agent-cli.sh /usr/share/opensearch/bin/opensearch-performance-analyzer/performance-analyzer-agent-cli
