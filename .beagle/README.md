@@ -7,21 +7,21 @@ git remote add upstream git@github.com:opensearch-project/OpenSearch.git
 
 git fetch upstream
 
-git merge 1.3.5
+git merge 1.3.10
 ```
 
 ## images
 
 ```bash
 # amd64
-docker pull opensearchproject/opensearch:1.3.5 && \
-docker tag opensearchproject/opensearch:1.3.5 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.5-amd64 && \
-docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.5-amd64
+docker pull opensearchproject/opensearch:1.3.10 && \
+docker tag opensearchproject/opensearch:1.3.10 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-amd64 && \
+docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-amd64
 
 # arm64
-docker pull opensearchproject/opensearch:1.3.5@sha256:a23ce96719b175f857e7ceffb2ed875cd0f8c9d8babedd6b15acfd523fe2784c && \
-docker tag opensearchproject/opensearch:1.3.5@sha256:a23ce96719b175f857e7ceffb2ed875cd0f8c9d8babedd6b15acfd523fe2784c registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.5-arm64 && \
-docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.5-arm64
+docker pull --platform=linux/arm64 opensearchproject/opensearch:1.3.10 && \
+docker tag opensearchproject/opensearch:1.3.10 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-arm64 && \
+docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-arm64
 ```
 
 ## cache
