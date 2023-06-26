@@ -45,7 +45,7 @@ opensearchplugin {
 }
 
 versions << [
-  'aws': '1.11.749'
+  'aws': '1.12.270'
 ]
 
 dependencies {
@@ -171,9 +171,9 @@ if (!s3EC2Bucket && !s3EC2BasePath && !s3ECSBucket && !s3ECSBasePath) {
 processYamlRestTestResources {
   Map<String, Object> expansions = [
     'permanent_bucket': s3PermanentBucket,
-    'permanent_base_path': s3PermanentBasePath + "_integration_tests",
+    'permanent_base_path': s3PermanentBasePath + "_integration_tests_" + BuildParams.testSeed,
     'temporary_bucket': s3TemporaryBucket,
-    'temporary_base_path': s3TemporaryBasePath + "_integration_tests",
+    'temporary_base_path': s3TemporaryBasePath + "_integration_tests_" + BuildParams.testSeed,
     'ec2_bucket': s3EC2Bucket,
     'ec2_base_path': s3EC2BasePath,
     'ecs_bucket': s3ECSBucket,
@@ -330,7 +330,8 @@ thirdPartyAudit.ignoreMissingClasses(
   'com.amazonaws.services.kms.model.EncryptRequest',
   'com.amazonaws.services.kms.model.EncryptResult',
   'com.amazonaws.services.kms.model.GenerateDataKeyRequest',
-  'com.amazonaws.services.kms.model.GenerateDataKeyResult'
+  'com.amazonaws.services.kms.model.GenerateDataKeyResult',
+  'com.amazonaws.services.kms.AWSKMSClientBuilder'
 )
 
 // jarhell with jdk (intentionally, because jaxb was removed from default modules in java 9)
