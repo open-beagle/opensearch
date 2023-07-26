@@ -106,8 +106,8 @@ dependencies {
   api 'org.apache.commons:commons-compress:1.21'
   api 'org.apache.ant:ant:1.10.12'
   api 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.3'
-  api 'com.netflix.nebula:nebula-publishing-plugin:4.6.0'
-  api 'com.netflix.nebula:gradle-info-plugin:7.1.3'
+  api 'com.netflix.nebula:nebula-publishing-plugin:4.7.0'
+  api 'com.netflix.nebula:gradle-info-plugin:8.2.0'
   api 'org.apache.rat:apache-rat:0.13'
   api 'commons-io:commons-io:2.7'
   api "net.java.dev.jna:jna:5.5.0"
@@ -118,6 +118,10 @@ dependencies {
   api 'org.apache.maven:maven-model:3.6.2'
   api 'com.networknt:json-schema-validator:1.0.36'
   api "com.fasterxml.jackson.core:jackson-databind:${props.getProperty('jackson_databind')}"
+  api "org.bouncycastle:bcprov-jdk15on:${props.getProperty('bouncycastle')}"
+  api "org.bouncycastle:bcpkix-jdk15on:${props.getProperty('bouncycastle')}"
+  api "org.bouncycastle:bcpg-jdk15on:${props.getProperty('bouncycastle')}"
+  api "org.bouncycastle:bcutil-jdk15on:${props.getProperty('bouncycastle')}"
 
   testFixturesApi "junit:junit:${props.getProperty('junit')}"
   testFixturesApi "com.carrotsearch.randomizedtesting:randomizedtesting-runner:${props.getProperty('randomizedrunner')}"
@@ -125,7 +129,7 @@ dependencies {
   testFixturesApi gradleTestKit()
   testImplementation 'com.github.tomakehurst:wiremock-jre8-standalone:2.23.2'
   testImplementation "org.mockito:mockito-core:${props.getProperty('mockito')}"
-  integTestImplementation('org.spockframework:spock-core:1.3-groovy-2.5') {
+  integTestImplementation('org.spockframework:spock-core:2.3-groovy-2.5') {
     exclude module: "groovy"
   }
   constraints {

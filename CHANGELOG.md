@@ -6,18 +6,20 @@ Inspired from [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Added
 ### Dependencies
-- Bump: Netty from 4.1.90.Final to 4.1.91.Final , ASM 9.4 to ASM 9.5, ByteBuddy 1.14.2 to 1.14.3 ([#6981](https://github.com/opensearch-project/OpenSearch/pull/6981))
-- Bump `org.gradle.test-retry` from 1.5.1 to 1.5.2
-- Bump `org.apache.hadoop:hadoop-minicluster` from 3.3.4 to 3.3.5
-- OpenJDK Update (April 2023 Patch releases) ([#7449](https://github.com/opensearch-project/OpenSearch/pull/7449)
-- Bump `net.minidev:json-smart` from 2.4.7 to 2.4.10
+- Bump `netty` from 4.1.91.Final to 4.1.93.Final ([#7901](https://github.com/opensearch-project/OpenSearch/pull/7901))
+- Bump `spock-core` from 1.3-groovy-2.5 to 2.3-groovy-2.5 ([#8119](https://github.com/opensearch-project/OpenSearch/pull/8119))
+- Bump `com.google.guava:guava` from 31.0.1-jre to 32.0.1-jre ([#8107](https://github.com/opensearch-project/OpenSearch/pull/8107))
+- Bump versions of gradle-info-plugin and nebula-publishing-plugin ([#8150](https://github.com/opensearch-project/OpenSearch/pull/8150))
+- Bump `json-smart` from 2.4.7 to 2.4.11 in plugins/repository-hdfs/ ([#8160](https://github.com/opensearch-project/OpenSearch/pull/8160))
+- Bump `netty` from 4.1.93.Final to 4.1.94.Final ([#8191](https://github.com/opensearch-project/OpenSearch/pull/8191))
 
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
-- Avoid negative memory result in IndicesQueryCache stats calculation ([#6917](https://github.com/opensearch-project/OpenSearch/pull/6917))
+- Fix mapping char_filter when mapping a hashtag ([#7591](https://github.com/opensearch-project/OpenSearch/pull/7591))
+- Force nebula plugins to use latest org.bouncycastle:* artifacts ([#8233](https://github.com/opensearch-project/OpenSearch/pull/8233))
 
 ### Security
 
-[Unreleased 1.3.x]: https://github.com/opensearch-project/OpenSearch/compare/1.3.9...HEAD
+[Unreleased 1.3.x]: https://github.com/opensearch-project/OpenSearch/compare/1.3.10...HEAD
