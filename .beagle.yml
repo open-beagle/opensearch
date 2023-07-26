@@ -79,6 +79,10 @@ steps:
 kind: pipeline
 name: main
 
+trigger:
+  branch:
+    - main
+
 clone:
   disable: true
 
