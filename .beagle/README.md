@@ -7,21 +7,21 @@ git remote add upstream git@github.com:opensearch-project/OpenSearch.git
 
 git fetch upstream
 
-git merge 1.3.10
+git merge 1.3.11
 ```
 
 ## images
 
 ```bash
 # amd64
-docker pull opensearchproject/opensearch:1.3.10 && \
-docker tag opensearchproject/opensearch:1.3.10 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-amd64 && \
-docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-amd64
+docker pull opensearchproject/opensearch:1.3.11 && \
+docker tag opensearchproject/opensearch:1.3.11 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.11-amd64 && \
+docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.11-amd64
 
 # arm64
-docker pull --platform=linux/arm64 opensearchproject/opensearch:1.3.10 && \
-docker tag opensearchproject/opensearch:1.3.10 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-arm64 && \
-docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.10-arm64
+docker pull --platform=linux/arm64 opensearchproject/opensearch:1.3.11 && \
+docker tag opensearchproject/opensearch:1.3.11 registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.11-arm64 && \
+docker push registry.cn-qingdao.aliyuncs.com/wod/opensearch:1.3.11-arm64
 ```
 
 ## cache
